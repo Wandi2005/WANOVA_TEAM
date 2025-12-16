@@ -5,10 +5,26 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "postgresql" // atau "sqlite" untuk dev
+  url      = env("DATABASE_URL")
+}
+
+model Archive {
+  id          Int       @id @default(autoincrement())
+  title       String    // Judul arsip
+  description String?   // Deskripsi opsional
+  category    String    // e.g., "Keuangan", "SDM", "Legal"
+  filePath    String    // path relatif: "uploads/arsip-123.pdf"
+  fileName    String    // nama asli file
+  fileType    String    // mime type: "application/pdf"
+  fileSize    Int       // dalam bytes
+  isDeleted   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // opsional: tambahkan relasi ke User jika ada autentikasi
 }
