@@ -1,30 +1,35 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql" // atau "sqlite" untuk dev
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Archive {
-  id          Int       @id @default(autoincrement())
-  title       String    // Judul arsip
-  description String?   // Deskripsi opsional
-  category    String    // e.g., "Keuangan", "SDM", "Legal"
-  filePath    String    // path relatif: "uploads/arsip-123.pdf"
-  fileName    String    // nama asli file
-  fileType    String    // mime type: "application/pdf"
-  fileSize    Int       // dalam bytes
-  isDeleted   Boolean   @default(false)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+model User {
+  id        Int      @id @default(autoincrement())
+  nama      String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  orders    Order[]
+  createdAt DateTime @default(now())
+}
 
-  // opsional: tambahkan relasi ke User jika ada autentikasi
+model Order {
+  id          Int      @id @default(autoincrement())
+  judul       String
+  deskripsi   String
+  status      String   @default("MENUNGGU")
+  isPaid      Boolean  @default(false)
+  tracking    String?
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  USER
 }
