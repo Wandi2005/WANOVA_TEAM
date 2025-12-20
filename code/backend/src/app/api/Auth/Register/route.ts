@@ -12,3 +12,7 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+
+      const existingUser = await prisma.user.findUnique({
+      where: { email },
+    });
