@@ -12,3 +12,5 @@ export async function POST(req) {
   if (exist) {
     return Response.json({ message: "Email sudah terdaftar" }, { status: 409 });
   }
+
+    const hashed = await hashPassword(password);
