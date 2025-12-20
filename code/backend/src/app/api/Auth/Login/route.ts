@@ -24,3 +24,5 @@ export async function POST(req: NextRequest) {
         { status: 404 }
       );
     }
+
+    const isValid = await comparePassword(password, user.password);
