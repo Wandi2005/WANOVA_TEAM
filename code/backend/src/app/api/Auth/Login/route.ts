@@ -13,3 +13,8 @@ export async function POST(req) {
   if (!user) {
     return Response.json({ message: "User tidak ditemukan" }, { status: 404 });
   }
+
+  const valid = await comparePassword(password, user.password);
+  if (!valid) {
+    return Response.json({ message: "Password salah" }, { status: 401 });
+  }
