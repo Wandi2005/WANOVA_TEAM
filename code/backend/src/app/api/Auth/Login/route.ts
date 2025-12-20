@@ -6,3 +6,10 @@ import { signToken } from "@/lib/jwt";
 export async function POST(req: NextRequest) {
   try {
     const { email, password } = await req.json();
+
+      if (!email || !password) {
+      return Response.json(
+        { message: "Email dan password wajib" },
+        { status: 400 }
+      );
+    }
