@@ -18,3 +18,10 @@ export async function POST(req) {
   if (!valid) {
     return Response.json({ message: "Password salah" }, { status: 401 });
   }
+
+    const token = signToken({
+    id: user.id,
+    role: user.role,
+  });
+
+  
