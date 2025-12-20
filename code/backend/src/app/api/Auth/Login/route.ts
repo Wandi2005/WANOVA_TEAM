@@ -26,3 +26,10 @@ export async function POST(req: NextRequest) {
     }
 
     const isValid = await comparePassword(password, user.password);
+
+    if (!isValid) {
+      return Response.json(
+        { message: "Password salah" },
+        { status: 401 }
+      );
+    }
