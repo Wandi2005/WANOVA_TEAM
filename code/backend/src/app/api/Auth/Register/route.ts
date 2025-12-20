@@ -14,3 +14,11 @@ export async function POST(req) {
   }
 
     const hashed = await hashPassword(password);
+
+      const user = await prisma.user.create({
+    data: {
+      nama,
+      email,
+      password: hashed,
+    },
+  });
