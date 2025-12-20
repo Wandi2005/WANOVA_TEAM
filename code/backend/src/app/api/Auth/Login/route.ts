@@ -44,3 +44,11 @@ export async function POST(req: NextRequest) {
       token,
       role: user.role,
     });
+
+    } catch (error) {
+    return Response.json(
+      { message: "Server error" },
+      { status: 500 }
+    );
+  }
+}
