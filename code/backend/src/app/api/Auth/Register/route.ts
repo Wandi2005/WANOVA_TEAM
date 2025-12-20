@@ -33,3 +33,12 @@ export async function POST(req: NextRequest) {
         password: hashedPassword,
       },
     });
+
+    return Response.json({
+      message: "Register berhasil",
+      user: {
+        id: user.id,
+        nama: user.nama,
+        email: user.email,
+      },
+    });
