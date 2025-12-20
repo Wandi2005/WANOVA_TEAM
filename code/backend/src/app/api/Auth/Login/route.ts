@@ -33,3 +33,8 @@ export async function POST(req: NextRequest) {
         { status: 401 }
       );
     }
+
+     const token = signToken({
+      id: user.id,
+      role: user.role,
+    });
