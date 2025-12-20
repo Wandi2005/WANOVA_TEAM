@@ -4,3 +4,7 @@ import { signToken } from "@/lib/jwt";
 
 export async function POST(req) {
   const { email, password } = await req.json();
+
+  if (!email || !password) {
+    return Response.json({ message: "Email & password wajib" }, { status: 400 });
+  }
