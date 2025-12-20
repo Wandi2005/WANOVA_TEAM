@@ -17,3 +17,10 @@ export async function POST(req: NextRequest) {
        const user = await prisma.user.findUnique({
       where: { email },
     });
+
+     if (!user) {
+      return Response.json(
+        { message: "User tidak ditemukan" },
+        { status: 404 }
+      );
+    }
