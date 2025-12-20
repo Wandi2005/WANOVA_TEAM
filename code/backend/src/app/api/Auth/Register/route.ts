@@ -23,3 +23,5 @@ export async function POST(req: NextRequest) {
         { status: 409 }
       );
     }
+
+     const hashedPassword = await hashPassword(password);
