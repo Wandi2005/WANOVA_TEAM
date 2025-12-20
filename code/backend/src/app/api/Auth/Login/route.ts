@@ -38,3 +38,9 @@ export async function POST(req: NextRequest) {
       id: user.id,
       role: user.role,
     });
+
+       return Response.json({
+      message: "Login berhasil",
+      token,
+      role: user.role,
+    });
