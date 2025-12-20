@@ -24,4 +24,9 @@ export async function POST(req) {
     role: user.role,
   });
 
-  
+    return Response.json({
+    message: "Login berhasil",
+    token,
+    role: user.role,
+  });
+}
