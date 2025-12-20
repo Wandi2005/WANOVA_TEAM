@@ -42,3 +42,11 @@ export async function POST(req: NextRequest) {
         email: user.email,
       },
     });
+
+     } catch (error) {
+    return Response.json(
+      { message: "Server error" },
+      { status: 500 }
+    );
+  }
+}
