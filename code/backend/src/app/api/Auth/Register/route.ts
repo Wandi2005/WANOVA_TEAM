@@ -16,3 +16,10 @@ export async function POST(req: NextRequest) {
       const existingUser = await prisma.user.findUnique({
       where: { email },
     });
+
+     if (existingUser) {
+      return Response.json(
+        { message: "Email sudah terdaftar" },
+        { status: 409 }
+      );
+    }
