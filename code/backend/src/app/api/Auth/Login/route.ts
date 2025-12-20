@@ -8,3 +8,8 @@ export async function POST(req) {
   if (!email || !password) {
     return Response.json({ message: "Email & password wajib" }, { status: 400 });
   }
+
+   const user = await prisma.user.findUnique({ where: { email } });
+  if (!user) {
+    return Response.json({ message: "User tidak ditemukan" }, { status: 404 });
+  }
