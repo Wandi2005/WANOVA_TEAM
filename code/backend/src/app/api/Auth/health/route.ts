@@ -1,7 +1,9 @@
+import { NextResponse } from "next/server";
+
 export async function GET() {
-  return Response.json({
-   status: "OK",
-    message: "Backend siap digunakan",
-    time: new Date(),
+  return NextResponse.json({
+    status: "OK",
+    service: "WANOVA Backend API",
+    timestamp: new Date(),
   });
 }
