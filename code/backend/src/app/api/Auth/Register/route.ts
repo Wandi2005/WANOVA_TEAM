@@ -3,9 +3,16 @@ import { prisma } from "@/lib/prisma";
 import { hashPassword } from "@/lib/hash";
 
 export async function POST(req: Request) {
-  const { name, email, password } = await req.json();
+  try {
+    const body = await req.json() as {
+      nama: string;
+      email: string;
+      password: string;
+    };
 
-  if (!name || !email || !password) {
+    const { nama, email, password } = body;
+
+  if (!nama || !email || !password) {
     return NextResponse.json(
       { message: "Data tidak lengkap" },
       { status: 400 }
@@ -25,7 +32,7 @@ export async function POST(req: Request) {
 
   const user = await prisma.user.create({
     data: {
-      name,
+      nama,
       email,
       password: await hashPassword(password),
       role: "USER",
@@ -36,8 +43,15 @@ export async function POST(req: Request) {
     message: "Registrasi berhasil",
     user: {
       id: user.id,
-      name: user.name,
+      nama: user.nama,
       email: user.email,
     },
   });
+}
+  catch (error) {
+    return NextResponse.json(
+      { message: "Terjadi kesalahan server" },
+      { status: 500 }
+    );
+  }
 }
