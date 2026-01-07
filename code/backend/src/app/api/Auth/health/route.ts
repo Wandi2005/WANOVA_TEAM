@@ -4,6 +4,6 @@ export async function GET() {
   return NextResponse.json({
     status: "OK",
     service: "WANOVA Backend API",
-    timestamp: new Date(),
+     timestamp: new Date().toISOString(),
   });
 }
