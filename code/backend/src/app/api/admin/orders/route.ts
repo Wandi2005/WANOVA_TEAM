@@ -40,3 +40,9 @@ export async function PUT(req: Request) {
         getAdminFromRequest(req);
         const { id, status, tracking } = await req.json();
         const updated = await prisma.order.update({
+ where: { id },
+      data: {
+        status,
+        tracking,
+      },
+    });
