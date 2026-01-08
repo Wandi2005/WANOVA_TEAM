@@ -99,3 +99,6 @@ export async function PUT(req: Request) {
     message: "Pesanan berhasil diperbarui",
     data: updated,
   });
+} catch {
+  
+}
