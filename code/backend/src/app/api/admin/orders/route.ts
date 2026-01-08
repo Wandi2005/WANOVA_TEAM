@@ -25,3 +25,5 @@ export async function GET(req: Request) {
     });
     return NextResponse.json(orders);
   } catch (err: any) {
+     return NextResponse.json(
+      { message: err.message },
