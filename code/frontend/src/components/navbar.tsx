@@ -2,3 +2,8 @@
 
 import { logout } from "@/lib/auth";
 export default function Navbar({ role }: { role: "ADMIN" | "USER" }) {
+    return (
+        <div className="bg-blue-600 text-white p-4 flex justify-between">
+          <span className="font-bold">
+            Sistem Arsip Digital
+          </span> 
