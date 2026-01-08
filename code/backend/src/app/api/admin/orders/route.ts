@@ -12,3 +12,7 @@ if (!userHeader) {
     const user = JSON.parse(userHeader);
   if (user.role !== "ADMIN") {
     return NextResponse.json(
+       message: "Akses admin ditolak" },
+      { status: 403 }
+    );
+  }
