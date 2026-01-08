@@ -10,3 +10,7 @@ export function middleware(req: NextRequest) {
       new URL("/login", req.url)
     );
   }
+  try {
+    const decoded = jwt.decode(token) as {
+      role: "ADMIN" | "USER";
+    };
