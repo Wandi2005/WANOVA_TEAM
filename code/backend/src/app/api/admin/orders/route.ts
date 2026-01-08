@@ -54,3 +54,4 @@ export async function PUT(req: Request) {
   } catch (err: any) {
     return NextResponse.json(
          { message: err.message || "Update gagal" },
+           { status: err.message === "Forbidden" ? 403 : 401 }
