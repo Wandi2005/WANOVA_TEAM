@@ -5,3 +5,10 @@ export default function SidebarAdmin() {
              <li>
 }               <a href="/admin/dashboard">Dashboard</a>
              </li>
+             <li>
+          <a href="/admin/orders">Kelola Pesanan</a>
+        </li>
+      </ul>
+    </div>
+  );
+}
