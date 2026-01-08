@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "../../../lib/prisma";
-import { verifyToken } from "../../../lib/auth";
+import { verifyToken } from "../../../../lib/auth";
 
 /* =========================
    POST: User membuat pesanan
@@ -12,8 +12,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
-    const token = authHeader.split(" ")[1];
-    const user = verifyToken(token);
+    const token = authHeader.split(" ")[1]!;
+    const user = verifyToken(token) as { id: number | string };
 
     const { judul, deskripsi } = await req.json();
 
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
         judul,
         deskripsi,
         status: "MENUNGGU",
-        userId: user.id,
+        userId: Number(user.id), // ✅ FIX
       },
     });
 
@@ -48,11 +48,11 @@ export async function GET(req: Request) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
-    const token = authHeader.split(" ")[1];
-    const user = verifyToken(token);
+    const token = authHeader.split(" ")[1]!;
+    const user = verifyToken(token) as { id: number | string };
 
     const orders = await prisma.order.findMany({
-      where: { userId: user.id },
+      where: { userId: Number(user.id) }, // ✅ FIX
       orderBy: { createdAt: "desc" },
     });
 
@@ -78,13 +78,15 @@ export async function PUT(req: Request) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
-    const token = authHeader.split(" ")[1];
-    const user = verifyToken(token);
+    const token = authHeader.split(" ")[1]!;
+    const user = verifyToken(token) as { id: number | string };
 
     const { id, judul, deskripsi } = await req.json();
 
+    const orderId = Number(id); // ✅ FIX
+
     const order = await prisma.order.findUnique({
-      where: { id },
+      where: { id: orderId },
     });
 
     if (!order) {
@@ -94,7 +96,7 @@ export async function PUT(req: Request) {
       );
     }
 
-    if (order.userId !== user.id) {
+    if (order.userId !== Number(user.id)) {
       return NextResponse.json(
         { message: "Akses ditolak" },
         { status: 403 }
@@ -109,7 +111,7 @@ export async function PUT(req: Request) {
     }
 
     const updated = await prisma.order.update({
-      where: { id },
+      where: { id: orderId },
       data: { judul, deskripsi },
     });
 
