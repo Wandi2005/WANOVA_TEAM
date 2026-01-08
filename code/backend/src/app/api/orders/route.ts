@@ -60,3 +60,5 @@ export async function PUT(req: Request) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
   } 
+
+  const token = authHeader.split(" ")[1];
