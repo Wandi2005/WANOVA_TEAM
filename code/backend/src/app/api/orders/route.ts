@@ -82,3 +82,6 @@ export async function PUT(req: Request) {
       { status: 403 }
     );
   }
+
+  if (order.isPaid) {
+    
