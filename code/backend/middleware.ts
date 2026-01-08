@@ -14,3 +14,6 @@ export function middleware(req: NextRequest) {
 
   try {
     const decoded = verifyToken(token);
+    // simpan data user ke header
+    const requestHeaders = new Headers(req.headers);
+    requestHeaders.set("user", JSON.stringify(decoded));
