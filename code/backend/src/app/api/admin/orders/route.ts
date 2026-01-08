@@ -5,3 +5,7 @@ export async function GET(req: Request) {
   const userHeader = req.headers.get("user");
 if (!userHeader) {
     return NextResponse.json(
+       { message: "Unauthorized" },
+      { status: 401 }
+    );
+  }
