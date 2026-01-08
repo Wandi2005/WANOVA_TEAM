@@ -1,6 +1,14 @@
-import { verify } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
-export function verifyToken(token: string): { id: number } {
-  const decoded = verify(token, process.env.JWT_SECRET!) as { id: number };
-  return decoded;
+interface JwtPayload {
+  id: number;
+  role: "ADMIN" | "USER";
+  email?: string;
+}
+
+export function verifyToken(token: string): JwtPayload {
+  return jwt.verify(
+    token,
+    process.env.JWT_SECRET!
+  ) as JwtPayload;
 }

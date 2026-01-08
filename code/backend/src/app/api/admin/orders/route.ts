@@ -2,12 +2,20 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyToken } from "@/lib/auth";
 
-function getAdminFromRequest(req: Request) {
+interface JwtPayload {
+  id: string;
+  role: "ADMIN" | "USER";
+  email?: string;
+}
+
+function getAdminFromRequest(req: Request): JwtPayload {
   const authHeader = req.headers.get("authorization");
-  if (!authHeader) throw new Error("Unauthorized");
+  if (!authHeader) {
+    throw new Error("Unauthorized");
+  }
 
   const token = authHeader.split(" ")[1];
-  const decoded: any = verifyToken(token);
+  const decoded = verifyToken(token) as unknown as JwtPayload;
 
   if (decoded.role !== "ADMIN") {
     throw new Error("Forbidden");
@@ -29,7 +37,9 @@ export async function GET(req: Request) {
     });
 
     return NextResponse.json(orders);
-  } catch (err: any) {
+  } catch (error) {
+    const err = error as Error;
+
     return NextResponse.json(
       { message: err.message },
       { status: err.message === "Forbidden" ? 403 : 401 }
@@ -58,7 +68,9 @@ export async function PUT(req: Request) {
       message: "Pesanan berhasil diperbarui oleh admin",
       data: updated,
     });
-  } catch (err: any) {
+  } catch (error) {
+    const err = error as Error;
+
     return NextResponse.json(
       { message: err.message || "Update gagal" },
       { status: err.message === "Forbidden" ? 403 : 401 }
