@@ -23,3 +23,5 @@ export async function GET(req: Request) {
        include: { user: true },
       orderBy: { createdAt: "desc" },
     });
+    return NextResponse.json(orders);
+  } catch (err: any) {
