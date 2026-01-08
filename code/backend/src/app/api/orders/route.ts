@@ -27,4 +27,9 @@ export async function POST(req: Request) { try {
     data: order,
   });
 } catch {
-  
+  return NextResponse.json(
+    { message: "Gagal membuat pesanan" },
+    { status: 500 }
+  );
+}  
+}
