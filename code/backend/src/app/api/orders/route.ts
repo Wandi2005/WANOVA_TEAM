@@ -10,3 +10,4 @@ export async function POST(req: Request) { try {
   }}};
 
   const token = authHeader.split(" ")[1];
+  const user: any = verifyToken(token);
