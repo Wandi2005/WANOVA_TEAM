@@ -15,3 +15,8 @@ export default function Navbar({ role }: { role: "ADMIN" | "USER" }) {
             {role === "USER" && (
             <a href="/user/dashboard">Dashboard User</a>
              )}
+             <button onClick={logout}>Logout</button>
+      </div>
+    </div>
+  );
+}
