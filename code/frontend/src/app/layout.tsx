@@ -17,3 +17,8 @@ export const metadata: Metadata = {
   description:
     "Implementasi Web Service Pengelolaan Arsip Digital berbasis RESTful API",
 };
+
+
+export default function RootLayout({
+  children,
+}: Readonly<{
