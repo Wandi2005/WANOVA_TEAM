@@ -14,3 +14,7 @@ export function middleware(req: NextRequest) {
     const decoded = jwt.decode(token) as {
       role: "ADMIN" | "USER";
     };
+      // user akses admin → ditolak
+    if (
+      req.nextUrl.pathname.startsWith("/admin") &&
+      decoded.role !== "ADMIN"
