@@ -14,4 +14,10 @@ export async function POST(req: Request) { try {
 
   const { judul, deskripsi } = await req.json();
   const order = await prisma.order.create({
-
+    data: {
+      judul,
+      deskripsi,
+      status: "MENUNGGU",
+      userId: user.id,
+    },
+  });
