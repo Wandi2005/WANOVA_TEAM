@@ -19,3 +19,4 @@ function getAdminFromRequest(req: Request) {
 export async function GET(req: Request) {
   try {
     getAdminFromRequest(req);
+    const orders = await prisma.order.findMany({
