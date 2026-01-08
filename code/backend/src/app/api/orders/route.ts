@@ -43,3 +43,7 @@ export async function PUT(req: Request) {
       { status: 403 }
     );
   }
+
+    const updated = await prisma.order.update({
+      
+    })
