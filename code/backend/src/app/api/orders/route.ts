@@ -65,4 +65,6 @@ export async function PUT(req: Request) {
   const user: any = verifyToken(token);
 
   const { id, judul, deskripsi } = await req.json();
-  
+  const order = await prisma.order.findUnique({
+    where: { id },
+  });
