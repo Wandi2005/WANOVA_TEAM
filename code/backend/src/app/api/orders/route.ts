@@ -94,3 +94,8 @@ export async function PUT(req: Request) {
     where: { id },
     data: { judul, deskripsi },
   });
+
+  return NextResponse.json({
+    message: "Pesanan berhasil diperbarui",
+    data: updated,
+  });
