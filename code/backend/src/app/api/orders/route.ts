@@ -46,4 +46,9 @@ return NextResponse.json({
   data: orders,
 });
 } catch {
-  export async function PUT(req: Request) {
+  return NextResponse.json(
+    { message: "Gagal mengambil data pesanan" },
+    { status: 500 }
+  );
+}
+
