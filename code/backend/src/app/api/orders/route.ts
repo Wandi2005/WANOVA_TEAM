@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       message: "Pesanan berhasil dibuat",
       data: order,
     });
-  } catch (err) {
+  } catch (error) {
     return NextResponse.json(
       { message: "Gagal membuat pesanan" },
       { status: 500 }
