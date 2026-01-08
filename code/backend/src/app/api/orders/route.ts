@@ -27,7 +27,8 @@ export async function GET() {
 
 export async function PUT(req: Request) {
   try {
-    
+    const { id, judul, deskripsi } = await req.json();
+
     });
 
     
