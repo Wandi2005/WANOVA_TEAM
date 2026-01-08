@@ -63,3 +63,6 @@ export async function PUT(req: Request) {
 
   const token = authHeader.split(" ")[1];
   const user: any = verifyToken(token);
+
+  const { id, judul, deskripsi } = await req.json();
+  
