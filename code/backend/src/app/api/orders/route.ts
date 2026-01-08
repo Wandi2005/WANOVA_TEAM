@@ -77,5 +77,8 @@ export async function PUT(req: Request) {
   }
 
   if (order.userId !== user.id) {
-    
+    return NextResponse.json(
+      { message: "Akses ditolak" },
+      { status: 403 }
+    );
   }
