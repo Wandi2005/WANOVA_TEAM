@@ -1,21 +1,24 @@
 import { NextResponse } from "next/server";
 
-
 export async function GET(req: Request) {
   const userHeader = req.headers.get("user");
-if (!userHeader) {
+
+  if (!userHeader) {
     return NextResponse.json(
-       { message: "Unauthorized" },
+      { message: "Unauthorized" },
       { status: 401 }
     );
   }
-    const user = JSON.parse(userHeader);
+
+  const user = JSON.parse(userHeader);
+
   if (user.role !== "ADMIN") {
     return NextResponse.json(
-       message: "Akses admin ditolak" },
+      { message: "Akses admin ditolak" },
       { status: 403 }
     );
   }
+
   return NextResponse.json({
     message: "Akses admin diterima",
   });
