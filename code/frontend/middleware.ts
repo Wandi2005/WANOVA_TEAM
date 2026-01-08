@@ -18,3 +18,8 @@ export function middleware(req: NextRequest) {
     if (
       req.nextUrl.pathname.startsWith("/admin") &&
       decoded.role !== "ADMIN"
+       ) {
+      return NextResponse.redirect(
+        new URL("/user/dashboard", req.url)
+      );
+    }
