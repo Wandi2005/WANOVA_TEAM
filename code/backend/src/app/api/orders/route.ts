@@ -21,3 +21,8 @@ export async function POST(req: Request) { try {
       userId: user.id,
     },
   });
+
+  return NextResponse.json({
+    message: "Pesanan berhasil dibuat",
+    data: order,
+  });
