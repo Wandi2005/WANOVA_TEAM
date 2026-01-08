@@ -84,4 +84,8 @@ export async function PUT(req: Request) {
   }
 
   if (order.isPaid) {
-    
+    return NextResponse.json(
+      { message: "Pesanan tidak dapat diubah setelah pembayaran" },
+      { status: 403 }
+    );
+  }
