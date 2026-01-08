@@ -11,3 +11,11 @@ function getAdminFromRequest(req: Request) {
   }
  return decoded;
 }
+
+
+/* =========================
+   GET: Admin lihat semua pesanan
+========================= */
+export async function GET(req: Request) {
+  try {
+    getAdminFromRequest(req);
