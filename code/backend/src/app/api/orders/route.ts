@@ -26,3 +26,5 @@ export async function POST(req: Request) { try {
     message: "Pesanan berhasil dibuat",
     data: order,
   });
+} catch {
+  
