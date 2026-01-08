@@ -11,3 +11,9 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const metadata: Metadata = {
+  title: "Sistem Pengelolaan Arsip Digital",
+  description:
+    "Implementasi Web Service Pengelolaan Arsip Digital berbasis RESTful API",
+};
