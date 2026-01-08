@@ -6,4 +6,7 @@ export function middleware(req: NextRequest) {
   const authHeader = req.headers.get("authorization");
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return NextResponse.json(
-        
+         { message: "Token tidak tersedia" },
+      { status: 401 }
+    );
+  }
