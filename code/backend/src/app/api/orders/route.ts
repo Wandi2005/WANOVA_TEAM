@@ -29,6 +29,8 @@ export async function PUT(req: Request) {
   try {
     const { id, judul, deskripsi } = await req.json();
 
+    const order = await prisma.order.findUnique({
+      where: { id },
     });
 
     
