@@ -27,3 +27,7 @@ export async function GET(req: Request) {
   } catch (err: any) {
      return NextResponse.json(
       { message: err.message },
+        { status: err.message === "Forbidden" ? 403 : 401 }
+    );
+  }
+}
