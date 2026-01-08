@@ -10,3 +10,5 @@ if (!userHeader) {
     );
   }
     const user = JSON.parse(userHeader);
+  if (user.role !== "ADMIN") {
+    return NextResponse.json(
