@@ -50,3 +50,6 @@ export async function PUT(req: Request) {
       message: "Pesanan berhasil diperbarui 
       oleh admin",
       data: updated,
+      });
+  } catch (err: any) {
+    return NextResponse.json(
