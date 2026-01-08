@@ -17,3 +17,6 @@ export function middleware(req: NextRequest) {
     // simpan data user ke header
     const requestHeaders = new Headers(req.headers);
     requestHeaders.set("user", JSON.stringify(decoded));
+ return NextResponse.next({
+      request: { headers: requestHeaders },
+    });
