@@ -28,3 +28,5 @@ export function middleware(req: NextRequest) {
       new URL("/login", req.url)
     );
   }
+    return NextResponse.next();
+}
