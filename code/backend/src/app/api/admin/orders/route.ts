@@ -9,3 +9,4 @@ if (!userHeader) {
       { status: 401 }
     );
   }
+    const user = JSON.parse(userHeader);
