@@ -23,3 +23,8 @@ export function middleware(req: NextRequest) {
         new URL("/user/dashboard", req.url)
       );
     }
+     } catch {
+    return NextResponse.redirect(
+      new URL("/login", req.url)
+    );
+  }
