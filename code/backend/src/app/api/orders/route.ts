@@ -47,4 +47,10 @@ export async function PUT(req: Request) {
     const updated = await prisma.order.update({
       where: { id },
       data: { judul, deskripsi },
-    })
+    });
+
+    return NextResponse.json(updated);
+  } catch {
+    return NextResponse.json({ message: "Update failed" }, { status: 500 });
+  }
+}
