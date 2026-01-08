@@ -24,3 +24,10 @@ export async function GET() {
   const orders = await prisma.order.findMany();
   return NextResponse.json(orders);
 }
+
+export async function PUT(req: Request) {
+  try {
+    
+    });
+
+    
