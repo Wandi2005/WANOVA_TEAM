@@ -55,5 +55,5 @@ return NextResponse.json({
 // PUT: User update pesanan (hanya jika belum dibayar)
 export async function PUT(req: Request) {
   try {
-    
+    const { id, judul, deskripsi } = await req.json();
   } 
