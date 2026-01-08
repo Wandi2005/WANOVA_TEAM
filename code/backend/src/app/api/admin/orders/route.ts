@@ -4,3 +4,5 @@ import { verifyToken } from "@/lib/auth";
 function getAdminFromRequest(req: Request) {
   const authHeader = req.headers.get("authorization");
   if (!authHeader) throw new Error("Unauthorized");
+   const token = authHeader.split(" ")[1];
+  const decoded: any = verifyToken(token);
