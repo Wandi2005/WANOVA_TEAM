@@ -20,3 +20,10 @@ export function middleware(req: NextRequest) {
  return NextResponse.next({
       request: { headers: requestHeaders },
     });
+      } catch (error) {
+    return NextResponse.json(
+      { message: "Token tidak valid" },
+      { status: 403 }
+    );
+  }
+}
