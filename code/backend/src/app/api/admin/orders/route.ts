@@ -20,3 +20,6 @@ export async function GET(req: Request) {
   try {
     getAdminFromRequest(req);
     const orders = await prisma.order.findMany({
+       include: { user: true },
+      orderBy: { createdAt: "desc" },
+    });
