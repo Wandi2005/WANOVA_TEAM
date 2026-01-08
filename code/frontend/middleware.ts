@@ -6,3 +6,7 @@ export function middleware(req: NextRequest) {
 
   // belum login
   if (!token) {
+    return NextResponse.redirect(
+      new URL("/login", req.url)
+    );
+  }
