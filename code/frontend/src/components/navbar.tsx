@@ -7,3 +7,8 @@ export default function Navbar({ role }: { role: "ADMIN" | "USER" }) {
           <span className="font-bold">
             Sistem Arsip Digital
           </span> 
+
+          <div className="flex gap-4">
+            {role === "ADMIN" && (
+             <a href="/admin/dashboard">Dashboard Admin</a>
+            )}
