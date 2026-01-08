@@ -13,3 +13,5 @@ export async function POST(req: Request) { try {
   const user: any = verifyToken(token);
 
   const { judul, deskripsi } = await req.json();
+  const order = await prisma.order.create({
+
