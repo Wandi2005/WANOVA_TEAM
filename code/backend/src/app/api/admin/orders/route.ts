@@ -9,3 +9,5 @@ function getAdminFromRequest(req: Request) {
     if (decoded.role !== "ADMIN") {
     throw new Error("Forbidden");
   }
+ return decoded;
+}
