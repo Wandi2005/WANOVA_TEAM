@@ -6,3 +6,6 @@ function getAdminFromRequest(req: Request) {
   if (!authHeader) throw new Error("Unauthorized");
    const token = authHeader.split(" ")[1];
   const decoded: any = verifyToken(token);
+    if (decoded.role !== "ADMIN") {
+    throw new Error("Forbidden");
+  }
