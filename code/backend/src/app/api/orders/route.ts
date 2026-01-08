@@ -100,5 +100,8 @@ export async function PUT(req: Request) {
     data: updated,
   });
 } catch {
-  
+  return NextResponse.json(
+    { message: "Gagal memperbarui pesanan" },
+    { status: 500 }
+  );
 }
