@@ -10,7 +10,7 @@ export async function POST(req: Request) {
       title,
       description,
       status: "PENDING",
-      userId,
+      userId: user.id,
     },
   });
 
