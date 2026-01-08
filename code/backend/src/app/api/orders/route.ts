@@ -5,5 +5,7 @@ import { verifyToken } from "@/lib/auth";
 
 export async function POST(req: Request) { try {
   const authHeader = req.headers.get("authorization");
-  
+  if (!authHeader) {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
 }}
