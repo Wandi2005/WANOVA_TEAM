@@ -68,3 +68,10 @@ export async function PUT(req: Request) {
   const order = await prisma.order.findUnique({
     where: { id },
   });
+
+  if (!order) {
+    return NextResponse.json(
+      { message: "Pesanan tidak ditemukan" },
+      { status: 404 }
+    );
+  }
