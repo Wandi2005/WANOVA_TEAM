@@ -36,5 +36,7 @@ export async function POST(req: Request) { try {
 
 // GET: User melihat pesanan sendiri
 export async function GET(req: Request) {
-  
+  const orders = await prisma.order.findMany({
+
+})
 }
