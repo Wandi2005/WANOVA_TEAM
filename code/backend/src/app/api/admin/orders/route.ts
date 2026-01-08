@@ -16,3 +16,7 @@ if (!userHeader) {
       { status: 403 }
     );
   }
+  return NextResponse.json({
+    message: "Akses admin diterima",
+  });
+}
