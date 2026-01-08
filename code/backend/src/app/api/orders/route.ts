@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 export async function POST(req: Request) {
+  const user = JSON.parse(req.headers.get("user")!);
   const { title, description, userId } = await req.json();
 
   const order = await prisma.order.create({
