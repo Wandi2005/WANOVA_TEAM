@@ -39,5 +39,9 @@ export async function GET(req: Request) {
   const orders = await prisma.order.findMany({
     where: { userId: user.id },
     orderBy: { createdAt: "desc" },
+});
 
+return NextResponse.json({
+  message: "Data pesanan berhasil diambil",
+  data: orders,
 });
