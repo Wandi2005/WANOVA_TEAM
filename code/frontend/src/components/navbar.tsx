@@ -12,3 +12,6 @@ export default function Navbar({ role }: { role: "ADMIN" | "USER" }) {
             {role === "ADMIN" && (
              <a href="/admin/dashboard">Dashboard Admin</a>
             )}
+            {role === "USER" && (
+            <a href="/user/dashboard">Dashboard User</a>
+             )}
