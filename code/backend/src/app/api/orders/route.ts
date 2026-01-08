@@ -36,3 +36,7 @@ export async function PUT(req: Request) {
     if (!order) {
       return NextResponse.json({ message: "Order not found" }, { status: 404 });
   }
+
+  if (order.isPaid) {
+    
+  }
