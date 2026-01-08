@@ -45,3 +45,5 @@ return NextResponse.json({
   message: "Data pesanan berhasil diambil",
   data: orders,
 });
+} catch {
+  export async function PUT(req: Request) {
