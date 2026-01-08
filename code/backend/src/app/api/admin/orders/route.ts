@@ -35,3 +35,5 @@ export async function GET(req: Request) {
 /* =========================
    PUT: Admin update status & tracking
 ========================= */
+export async function PUT(req: Request) {
+  try {
