@@ -22,5 +22,11 @@ interface Props {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
+            body: JSON.stringify({
+                id: order.id,
+                status,
+                tracking,
+              }),
+            });
 
 
