@@ -35,6 +35,10 @@ export default function AdminDashboard() {
 <main className="p-6 w-full">
           <h1 className="text-2xl font-bold mb-6">Dashboard Admin</h1>
 
+<table className="w-full border border-gray-700">
+            <thead className="bg-gray-800">
+              <tr>
+
 
 
 
