@@ -29,3 +29,19 @@ export default function RegisterPage() {
           password,
         }),
       });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.message || "Registrasi gagal");
+        return;
+      }
+
+      alert("Registrasi berhasil, silakan login");
+      router.push("/login");
+    } catch (err) {
+      setError("Terjadi kesalahan server");
+    } finally {
+      setLoading(false);
+    }
+  };
