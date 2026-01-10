@@ -15,3 +15,4 @@ export default function UpdateOrderModal({
   onClose,
   onUpdated,
 }: Props) {
+  const [status, setStatus] = useState<string>(order.status);
