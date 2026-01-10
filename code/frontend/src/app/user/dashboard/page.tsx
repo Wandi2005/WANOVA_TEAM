@@ -64,5 +64,22 @@ export default function UserDashboard() {
             </table>
           </div>
 
+           {/* Menu Fitur */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-lg mb-2">Profil</h4>
+              <p className="text-sm text-gray-600">
+                Kelola data diri, foto profil, dan keamanan akun.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-lg mb-2">Pesanan</h4>
+              <p className="text-sm text-gray-600">
+                Lihat status, detail, dan riwayat pesanan Anda.
+              </p>
+            </div>
+
+
 
 
