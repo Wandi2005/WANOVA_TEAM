@@ -19,3 +19,24 @@ export default function UserDashboard() {
             </p>
           </div>
 
+           {/* Statistik */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div className="bg-white p-5 rounded-xl shadow">
+              <p className="text-sm text-gray-500">Total Pesanan</p>
+              <h2 className="text-2xl font-bold">24</h2>
+            </div>
+            <div className="bg-white p-5 rounded-xl shadow">
+              <p className="text-sm text-gray-500">Pesanan Aktif</p>
+              <h2 className="text-2xl font-bold">5</h2>
+            </div>
+            <div className="bg-white p-5 rounded-xl shadow">
+              <p className="text-sm text-gray-500">Riwayat Transaksi</p>
+              <h2 className="text-2xl font-bold">19</h2>
+            </div>
+            <div className="bg-white p-5 rounded-xl shadow">
+              <p className="text-sm text-gray-500">Notifikasi</p>
+              <h2 className="text-2xl font-bold">3</h2>
+            </div>
+          </div>
+
+
