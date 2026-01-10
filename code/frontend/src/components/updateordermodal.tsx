@@ -60,3 +60,4 @@ interface Props {
 
             <div className="flex justify-end gap-2">
             <button onClick={onClose} className="px-3 py-1 border">Batal</button>
+                onClick={handleUpdate}
