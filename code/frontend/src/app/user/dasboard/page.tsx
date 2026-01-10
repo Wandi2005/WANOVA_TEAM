@@ -5,3 +5,4 @@ import SidebarUser from "@/components/SidebarUser";
 export default function UserDashboard() {
   return ( jadikan satu saja 
     <>
+    <Navbar role="USER" /> <div className="flex"></div>
