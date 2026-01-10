@@ -22,3 +22,5 @@ export default function UpdateOrderModal({
 
   async function handleUpdate() {
     setLoading(true);
+    await fetch("http://localhost:3000/api/admin/orders", {
+      method: "PUT",
