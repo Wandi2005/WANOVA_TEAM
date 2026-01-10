@@ -57,3 +57,21 @@ export default function RegisterPage() {
         {error && (
           <p className="mb-3 text-sm text-red-600 text-center">{error}</p>
         )}
+
+          <input
+          type="text"
+          placeholder="Nama"
+          className="w-full border p-2 rounded mb-3"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="Email"
+          className="w-full border p-2 rounded mb-3"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
