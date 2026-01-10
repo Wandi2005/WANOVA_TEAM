@@ -73,3 +73,5 @@ export default function UpdateOrderModal({
               className="px-3 py-1 bg-blue-600 text-white"
             disabled={loading}
           ></button>
+          {loading ? "Menyimpan..." : "Simpan"}
+          </button>
