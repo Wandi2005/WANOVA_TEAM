@@ -45,3 +45,15 @@ export default function RegisterPage() {
       setLoading(false);
     }
   };
+
+   return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <form
+        onSubmit={handleRegister}
+        className="bg-white p-6 rounded shadow w-96"
+      >
+        <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
+
+        {error && (
+          <p className="mb-3 text-sm text-red-600 text-center">{error}</p>
+        )}
