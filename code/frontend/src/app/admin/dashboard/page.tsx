@@ -49,3 +49,9 @@ export default function UpdateOrderModal({
           value={status}
            onChange={(e) => setStatus(e.target.value)}
         ></select>
+
+         <option value="MENUNGGU">MENUNGGU</option>
+          <option value="DIPROSES">DIPROSES</option>
+          <option value="DIKIRIM">DIKIRIM</option>
+          <option value="SELESAI">SELESAI</option>
+        </select>
