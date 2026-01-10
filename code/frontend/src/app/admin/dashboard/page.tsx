@@ -72,6 +72,12 @@ Update
 
 <UpdateOrderModal
         order={selectedOrder}
+onClose={() => setSelectedOrder(null)}
+        onSave={handleSave}
+      />
+    </>
+  );
+}
 
 
 
