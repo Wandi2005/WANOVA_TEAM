@@ -17,3 +17,4 @@ interface Props {
         setLoading(true);
 
         await fetch("http://localhost:3000/api/admin/orders", {
+            method: "PUT",
