@@ -75,3 +75,9 @@ export default function UpdateOrderModal({
           ></button>
           {loading ? "Menyimpan..." : "Simpan"}
           </button>
+
+           </div>
+      </div>
+    </div>
+  );
+}
