@@ -47,4 +47,5 @@ interface Props {
             >
                 <option value="MENUNGGU">MENUNGGU</option>
                 <option value="DIPROSES">DIPROSES</option>
+                <option value="DIKIRIM">DIKIRIM</option>
             </select>
