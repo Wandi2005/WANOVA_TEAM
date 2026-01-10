@@ -21,6 +21,11 @@ export default function AdminDashboard() {
 
  const handleSave = (updatedOrder: Order) => {
  setOrders((prev) =>
+  prev.map((o) => (o.id === updatedOrder.id ? updatedOrder : o))
+    );
+    setSelectedOrder(null);
+  };
+
 
 
 
