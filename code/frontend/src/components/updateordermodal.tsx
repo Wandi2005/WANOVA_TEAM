@@ -43,6 +43,7 @@ interface Props {
             <select
             className="border w-full mb-3 p-2"
             value={status}
+            onChange={(e) => setStatus(e.target.value)}
             >
 
             </select>
