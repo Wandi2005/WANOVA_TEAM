@@ -21,3 +21,31 @@ export default function AdminDashboard() {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
+
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Dashboard Admin</h1>
+
+      <table className="w-full border">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="border p-2">ID</th>
+            <th className="border p-2">Judul</th>
+            <th className="border p-2">Status</th>
+            <th className="border p-2">Tracking</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map((o) => (
+            <tr key={o.id}>
+              <td className="border p-2">{o.id}</td>
+              <td className="border p-2">{o.judul}</td>
+              <td className="border p-2">{o.status}</td>
+              <td className="border p-2">{o.tracking || "-"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
