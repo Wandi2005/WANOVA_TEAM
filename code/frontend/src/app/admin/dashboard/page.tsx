@@ -24,3 +24,5 @@ export default function UpdateOrderModal({
     setLoading(true);
     await fetch("http://localhost:3000/api/admin/orders", {
       method: "PUT",
+        headers: {
+        "Content-Type": "application/json",
