@@ -11,3 +11,7 @@ onClose: () => void;{
 }
 
 export default function UpdateOrderModal({
+  order,
+  onClose,
+  onUpdated,
+}: Props) {
