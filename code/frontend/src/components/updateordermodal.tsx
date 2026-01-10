@@ -11,3 +11,4 @@ interface Props {
   export default function UpdateOrderModal({ order, onClose, onUpdated }: Props) {
     const [status, setStatus] = useState(order.status);
     const [tracking, setTracking] = useState(order.tracking || "");
+    const [loading, setLoading] = useState(false);
