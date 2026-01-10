@@ -7,3 +7,5 @@ interface Props {
     onClose: () => void;
     onUpdated: () => void;
   }
+
+  export default function UpdateOrderModal({ order, onClose, onUpdated }: Props) {
