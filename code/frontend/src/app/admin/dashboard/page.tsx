@@ -55,3 +55,10 @@ export default function UpdateOrderModal({
           <option value="DIKIRIM">DIKIRIM</option>
           <option value="SELESAI">SELESAI</option>
         </select>
+
+        <label>Tracking</label>
+        <input
+          className="border w-full mb-4 p-2"
+          value={tracking}
+          onChange={(e) => setTracking(e.target.value)}
+        />
