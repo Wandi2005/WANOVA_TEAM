@@ -1,2 +1,8 @@
 "use client";
-mport { useState } from "react";
+import { useState } from "react";
+
+interface Order {
+  id: number;
+  status: string;
+  tracking?: string;
+}
