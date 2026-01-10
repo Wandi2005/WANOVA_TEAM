@@ -39,3 +39,5 @@ interface Props {
             <div className="bg-white p-6 rounded w-96"></div>
             <h2 className="text-lg font-bold mb-4">Update Pesanan</h2>
 
+            <label>Status</label>
+
