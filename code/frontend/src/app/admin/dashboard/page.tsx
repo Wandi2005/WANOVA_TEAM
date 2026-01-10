@@ -19,6 +19,8 @@ export default function AdminDashboard() {
 
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
 
+ const handleSave = (updatedOrder: Order) => {
+ setOrders((prev) =>
 
 
 
