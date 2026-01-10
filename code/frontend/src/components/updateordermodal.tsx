@@ -15,3 +15,5 @@ interface Props {
 
     async function handleUpdate() {
         setLoading(true);
+
+        await fetch("http://localhost:3000/api/admin/orders", {
