@@ -38,6 +38,13 @@ export default function AdminDashboard() {
 <table className="w-full border border-gray-700">
             <thead className="bg-gray-800">
               <tr>
+ <th className="p-2 border">ID</th>
+                <th className="p-2 border">Judul</th>
+                <th className="p-2 border">Status</th>
+                <th className="p-2 border">Tracking</th>
+                <th className="p-2 border">Aksi</th>
+              </tr>
+            </thead>
 
 
 
