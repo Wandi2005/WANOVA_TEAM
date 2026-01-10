@@ -32,6 +32,9 @@ export default function AdminDashboard() {
 <div className="flex min-h-screen bg-black text-white">
         <SidebarAdmin />
 
+<main className="p-6 w-full">
+          <h1 className="text-2xl font-bold mb-6">Dashboard Admin</h1>
+
 
 
 
