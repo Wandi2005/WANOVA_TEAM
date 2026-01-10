@@ -48,6 +48,13 @@ export default function AdminDashboard() {
 
  <tbody>
               {orders.map((order) => (
+<tr key={order.id} className="text-center">
+                  <td className="p-2 border">{order.id}</td>
+                  <td className="p-2 border">{order.judul}</td>
+                  <td className="p-2 border">{order.status}</td>
+                  <td className="p-2 border">
+                    {order.tracking ?? "-"}
+                  </td>
 
 
 
