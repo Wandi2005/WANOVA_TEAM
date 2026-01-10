@@ -39,4 +39,30 @@ export default function UserDashboard() {
             </div>
           </div>
 
+          {/* Informasi Akun */}
+          <div className="bg-white p-6 rounded-xl shadow mb-8">
+            <h3 className="text-xl font-semibold mb-4">Informasi Akun</h3>
+            <table className="w-full text-sm">
+              <tbody>
+                <tr>
+                  <td className="py-2 font-medium">Nama</td>
+                  <td>: User Demo</td>
+                </tr>
+                <tr>
+                  <td className="py-2 font-medium">Email</td>
+                  <td>: user@email.com</td>
+                </tr>
+                <tr>
+                  <td className="py-2 font-medium">Role</td>
+                  <td>: USER</td>
+                </tr>
+                <tr>
+                  <td className="py-2 font-medium">Status</td>
+                  <td>: Aktif</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
 
