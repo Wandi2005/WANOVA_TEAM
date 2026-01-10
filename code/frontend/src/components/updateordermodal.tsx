@@ -62,3 +62,6 @@ interface Props {
             <button onClick={onClose} className="px-3 py-1 border">Batal</button>
                 onClick={handleUpdate}
                 className="px-3 py-1 bg-blue-600 text-white"
+                disabled={loading}
+                >
+                
