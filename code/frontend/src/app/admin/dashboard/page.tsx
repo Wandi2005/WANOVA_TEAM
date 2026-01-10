@@ -46,6 +46,8 @@ export default function AdminDashboard() {
               </tr>
             </thead>
 
+ <tbody>
+              {orders.map((order) => (
 
 
 
