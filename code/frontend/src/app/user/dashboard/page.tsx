@@ -80,6 +80,20 @@ export default function UserDashboard() {
               </p>
             </div>
 
+            
+            <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <h4 className="font-semibold text-lg mb-2">Pengaturan</h4>
+              <p className="text-sm text-gray-600">
+                Atur preferensi sistem, notifikasi, dan keamanan.
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </>
+  );
+}
+
 
 
 
