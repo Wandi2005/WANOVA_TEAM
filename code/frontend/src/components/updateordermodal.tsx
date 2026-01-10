@@ -18,3 +18,5 @@ interface Props {
 
         await fetch("http://localhost:3000/api/admin/orders", {
             method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
