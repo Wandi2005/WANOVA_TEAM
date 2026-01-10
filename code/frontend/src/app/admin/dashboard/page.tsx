@@ -14,3 +14,7 @@ id: number;
 export default function AdminDashboard() {
   const [orders, setOrders] = useState<Order[]>([
     { id: 1, judul: "Pesanan 1", status: "MENUNGGU", tracking: null },
+    { id: 2, judul: "Pesanan 2", status: "DIPROSES", tracking: "TR1234" },
+  ]);
+
+
