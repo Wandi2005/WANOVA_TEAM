@@ -92,3 +92,17 @@ export default function RegisterPage() {
         >
           {loading ? "Mendaftar..." : "Register"}
         </button>
+
+          <p className="text-sm text-center mt-4">
+          Sudah punya akun?{" "}
+          <span
+            className="text-blue-600 cursor-pointer"
+            onClick={() => router.push("/login")}
+          >
+            Login
+          </span>
+        </p>
+      </form>
+    </div>
+  );
+}
