@@ -46,4 +46,5 @@ interface Props {
             onChange={(e) => setStatus(e.target.value)}
             >
                 <option value="MENUNGGU">MENUNGGU</option>
+                <option value="DIPROSES">DIPROSES</option>
             </select>
