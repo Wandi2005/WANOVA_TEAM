@@ -29,4 +29,9 @@ interface Props {
               }),
             });
 
+            setLoading(false);
+            onUpdated();
+            onClose();
+          }
+
 
