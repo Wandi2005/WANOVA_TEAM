@@ -30,3 +30,7 @@ export default function UpdateOrderModal({
           },
       body: JSON.stringify({
         id: order.id,
+        status,
+        tracking,
+      }),
+    });
