@@ -8,3 +8,5 @@ export default function UserDashboard() {
     <Navbar role="USER" /> <div className="flex"></div>
      <SidebarUser />
         <div className="p-6"></div>
+        <h1 className="text-2xl font-bold">
+            Dashboard User
