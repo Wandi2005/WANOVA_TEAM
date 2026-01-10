@@ -6,3 +6,7 @@ interface Order {
   status: string;
   tracking?: string;
 }
+onClose: () => void;{
+  onUpdated: () => void;
+}
+
