@@ -37,4 +37,5 @@ interface Props {
           return (
             <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
             <div className="bg-white p-6 rounded w-96"></div>
+            <h2 className="text-lg font-bold mb-4">Update Pesanan</h2>
 
