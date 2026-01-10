@@ -10,3 +10,5 @@ id: number;
  status: string;
   tracking: string | null;
 }
+
+export default function AdminDashboard()
