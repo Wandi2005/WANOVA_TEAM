@@ -17,3 +17,15 @@ export default function SidebarUser() {
       pathname === path ? "bg-blue-200 font-semibold" : ""
     }`;
 
+    return (
+    <aside className="w-64 bg-gray-100 min-h-screen border-r">
+      <div className="p-4 border-b">
+        <h2 className="text-lg font-bold">User Panel</h2>
+      </div>
+
+      <nav className="p-4 space-y-2">
+        <Link href="/user/dashboard" className={menuClass("/user/dashboard")}>
+          Dashboard
+        </Link>
+
+
