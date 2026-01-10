@@ -1,7 +1,7 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import SidebarUser from "@/components/SidebarUser";
+import Navbar from "@/components/navbar";
+import SidebarUser from "@/components/sidebaruser";
 
 export default function UserDashboard() {
   return (
