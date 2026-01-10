@@ -11,4 +11,6 @@ id: number;
   tracking: string | null;
 }
 
-export default function AdminDashboard()
+export default function AdminDashboard() {
+  const [orders, setOrders] = useState<Order[]>([
+    { id: 1, judul: "Pesanan 1", status: "MENUNGGU", tracking: null },
