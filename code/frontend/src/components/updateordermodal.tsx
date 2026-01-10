@@ -58,16 +58,16 @@ interface Props {
                 onChange={(e) => setTracking(e.target.value)}
             />
 
-            <div className="flex justify-end gap-2">
-            <button onClick={onClose} className="px-3 py-1 border">Batal</button>
-                onClick={handleUpdate}
-                className="px-3 py-1 bg-blue-600 text-white"
-                disabled={loading}
-                >
-                {loading ? "Menyimpan..." : "Simpan"}
-            </button>
-        </div>
-        </div>
-        </div>
-    );
+<div className="flex justify-end gap-2">
+  <button onClick={onClose} className="px-3 py-1 border">Batal</button>
+  <button
+    onClick={handleUpdate}
+    className="px-3 py-1 bg-blue-600 text-white"
+    disabled={loading}
+  >
+    {loading ? "Menyimpan..." : "Simpan"}
+  </button>
+</div>
+</div>
+);
 }
