@@ -16,3 +16,5 @@ export default function UpdateOrderModal({
   onUpdated,
 }: Props) {
   const [status, setStatus] = useState<string>(order.status);
+  const [tracking, setTracking] = useState<string>(order.tracking || "");
+  const [loading, setLoading] = useState<boolean>(false);
