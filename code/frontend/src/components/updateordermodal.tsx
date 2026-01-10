@@ -12,3 +12,6 @@ interface Props {
     const [status, setStatus] = useState(order.status);
     const [tracking, setTracking] = useState(order.tracking || "");
     const [loading, setLoading] = useState(false);
+
+    async function handleUpdate() {
+        setLoading(true);
