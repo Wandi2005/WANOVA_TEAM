@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 
 interface Order {
@@ -6,7 +7,10 @@ interface Order {
   status: string;
   tracking?: string;
 }
-onClose: () => void;{
+
+interface Props {
+  order: Order;
+  onClose: () => void;
   onUpdated: () => void;
 }
 
@@ -19,15 +23,15 @@ export default function UpdateOrderModal({
   const [tracking, setTracking] = useState<string>(order.tracking || "");
   const [loading, setLoading] = useState<boolean>(false);
 
-
   async function handleUpdate() {
     setLoading(true);
+
     await fetch("http://localhost:3000/api/admin/orders", {
       method: "PUT",
-        headers: {
+      headers: {
         "Content-Type": "application/json",
-        Authorization: Bearer ${localStorage.getItem("token")},
-          },
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
       body: JSON.stringify({
         id: order.id,
         status,
@@ -35,22 +39,23 @@ export default function UpdateOrderModal({
       }),
     });
 
-     setLoading(false);
+    setLoading(false);
     onUpdated();
     onClose();
   }
-    return (
-      <div className="fixed inset-0 bg-black/40 flex items-center justify-center"></div>
-       <div className="bg-white p-6 rounded w-96">
+
+  return (
+    <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
+      <div className="bg-white p-6 rounded w-96">
         <h2 className="text-lg font-bold mb-4">Update Pesanan</h2>
-<label>Status</label>
+
+        <label>Status</label>
         <select
           className="border w-full mb-3 p-2"
           value={status}
-           onChange={(e) => setStatus(e.target.value)}
-        ></select>
-
-         <option value="MENUNGGU">MENUNGGU</option>
+          onChange={(e) => setStatus(e.target.value)}
+        >
+          <option value="MENUNGGU">MENUNGGU</option>
           <option value="DIPROSES">DIPROSES</option>
           <option value="DIKIRIM">DIKIRIM</option>
           <option value="SELESAI">SELESAI</option>
@@ -64,19 +69,17 @@ export default function UpdateOrderModal({
         />
 
         <div className="flex justify-end gap-2">
-          <button onClick={onClose} className="px-3 py-1 border"></button>
+          <button onClick={onClose} className="px-3 py-1 border">
             Batal
           </button>
           <button
             onClick={handleUpdate}
-
-              className="px-3 py-1 bg-blue-600 text-white"
+            className="px-3 py-1 bg-blue-600 text-white"
             disabled={loading}
-          ></button>
-          {loading ? "Menyimpan..." : "Simpan"}
+          >
+            {loading ? "Menyimpan..." : "Simpan"}
           </button>
-
-           </div>
+        </div>
       </div>
     </div>
   );
