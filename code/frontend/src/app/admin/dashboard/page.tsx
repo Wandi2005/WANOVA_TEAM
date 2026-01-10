@@ -65,3 +65,7 @@ export default function UpdateOrderModal({
 
         <div className="flex justify-end gap-2">
           <button onClick={onClose} className="px-3 py-1 border"></button>
+            Batal
+          </button>
+          <button
+            onClick={handleUpdate}
