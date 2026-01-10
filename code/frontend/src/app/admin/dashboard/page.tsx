@@ -29,6 +29,10 @@ export default function AdminDashboard() {
   return (
     <>
 <Navbar role="ADMIN" />
+<div className="flex min-h-screen bg-black text-white">
+        <SidebarAdmin />
+
+
 
 
 
