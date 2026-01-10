@@ -75,3 +75,20 @@ export default function RegisterPage() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full border p-2 rounded mb-4"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 disabled:opacity-50"
+        >
+          {loading ? "Mendaftar..." : "Register"}
+        </button>
