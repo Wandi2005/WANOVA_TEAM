@@ -55,6 +55,11 @@ export default function AdminDashboard() {
                   <td className="p-2 border">
                     {order.tracking ?? "-"}
                   </td>
+   <td className="p-2 border">
+                    <button
+                      onClick={() => setSelectedOrder(order)}
+                      className="px-3 py-1 bg-blue-600 rounded hover:bg-blue-700"
+                    >
 
 
 
