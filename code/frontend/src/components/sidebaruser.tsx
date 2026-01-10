@@ -28,4 +28,19 @@ export default function SidebarUser() {
           Dashboard
         </Link>
 
+         <Link href="/user/orders" className={menuClass("/user/orders")}>
+          Pesanan Saya
+        </Link>
+
+        <button
+          onClick={handleLogout}
+          className="w-full text-left px-4 py-2 rounded hover:bg-red-100 text-red-600"
+        >
+          Logout
+        </button>
+      </nav>
+    </aside>
+  );
+}
+
 
