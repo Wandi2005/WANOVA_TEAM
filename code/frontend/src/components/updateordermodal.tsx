@@ -41,6 +41,8 @@ interface Props {
 
             <label>Status</label>
             <select
-            className="border w-full mb-3 p-2">
+            className="border w-full mb-3 p-2"
+            value={status}
+            >
 
             </select>
