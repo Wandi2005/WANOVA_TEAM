@@ -17,4 +17,8 @@ export default function AdminDashboard() {
     { id: 2, judul: "Pesanan 2", status: "DIPROSES", tracking: "TR1234" },
   ]);
 
+  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+
+
+
 
