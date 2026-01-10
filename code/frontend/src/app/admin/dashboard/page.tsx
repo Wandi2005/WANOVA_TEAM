@@ -34,3 +34,8 @@ export default function UpdateOrderModal({
         tracking,
       }),
     });
+
+     setLoading(false);
+    onUpdated();
+    onClose();
+  }
