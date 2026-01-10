@@ -40,4 +40,7 @@ interface Props {
             <h2 className="text-lg font-bold mb-4">Update Pesanan</h2>
 
             <label>Status</label>
+            <select
+            className="border w-full mb-3 p-2">
 
+            </select>
