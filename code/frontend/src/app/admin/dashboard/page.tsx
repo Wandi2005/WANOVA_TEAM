@@ -70,6 +70,9 @@ Update
         </main>
       </div>
 
+<UpdateOrderModal
+        order={selectedOrder}
+
 
 
 
