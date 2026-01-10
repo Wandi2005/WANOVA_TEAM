@@ -63,6 +63,12 @@ export default function AdminDashboard() {
 Update
                     </button>
                   </td>
+</tr>
+              ))}
+            </tbody>
+          </table>
+        </main>
+      </div>
 
 
 
