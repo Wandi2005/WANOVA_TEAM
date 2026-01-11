@@ -32,6 +32,17 @@ export default function UserDashboard() {
                 key={idx}
                 className={`bg-gradient-to-r ${stat.color} rounded-2xl shadow-lg p-6 text-white transform transition-all duration-300 hover:scale-[1.03] hover:shadow-xl`}
               >
+                 <div className="flex justify-between items-start">
+                  <div>
+                    <p className="text-sm opacity-90">{stat.title}</p>
+                    <h2 className="text-3xl font-bold mt-1">{stat.value}</h2>
+                  </div>
+                  <span className="text-2xl">{stat.icon}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
                 
 
 
