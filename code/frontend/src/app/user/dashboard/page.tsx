@@ -72,6 +72,32 @@ export default function UserDashboard() {
             </div>
           </div>
 
+           {/* Menu Fitur — Card Interaktif */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Profil",
+                desc: "Kelola data diri, foto profil, dan keamanan akun.",
+                color: "indigo",
+                hoverBg: "hover:bg-indigo-50",
+                icon: "👤",
+              },
+              {
+                title: "Pesanan",
+                desc: "Lihat status, detail, dan riwayat pesanan Anda.",
+                color: "emerald",
+                hoverBg: "hover:bg-emerald-50",
+                icon: "📋",
+              },
+              {
+                title: "Pengaturan",
+                desc: "Atur preferensi sistem, notifikasi, dan keamanan.",
+                color: "purple",
+                hoverBg: "hover:bg-purple-50",
+                icon: "⚙️",
+              },
+
+
 
 
                 
