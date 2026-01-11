@@ -20,3 +20,18 @@ export default function UserDashboard() {
             </p>
           </div>
 
+           {/* Statistik Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              { title: "Total Pesanan", value: "24", color: "from-blue-500 to-indigo-600", icon: "📦" },
+              { title: "Pesanan Aktif", value: "5", color: "from-teal-500 to-emerald-600", icon: "🔄" },
+              { title: "Riwayat Transaksi", value: "19", color: "from-purple-500 to-fuchsia-600", icon: "💳" },
+              { title: "Notifikasi", value: "3", color: "from-amber-500 to-orange-500", icon: "🔔" },
+            ].map((stat, idx) => (
+              <div
+                key={idx}
+                className={`bg-gradient-to-r ${stat.color} rounded-2xl shadow-lg p-6 text-white transform transition-all duration-300 hover:scale-[1.03] hover:shadow-xl`}
+              >
+                
+
+
