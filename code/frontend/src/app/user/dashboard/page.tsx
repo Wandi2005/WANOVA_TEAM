@@ -96,6 +96,31 @@ export default function UserDashboard() {
                 hoverBg: "hover:bg-purple-50",
                 icon: "⚙️",
               },
+               ].map((card, idx) => (
+              <div
+                key={idx}
+                className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-200 cursor-pointer group 
+                  transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg ${card.hoverBg}`}
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-2xl mt-1">{card.icon}</span>
+                  <div>
+                    <h4
+                      className={`font-semibold text-lg text-gray-800 mb-2 group-hover:text-${card.color}-700 transition-colors`}
+                    >
+                      {card.title}
+                    </h4>
+                    <p className="text-sm text-gray-600">{card.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </main>
+      </div>
+    </>
+  );
+}
 
 
 
